@@ -8,7 +8,7 @@ THE GAME ONLY WORKS ON RINKEBY WITH THE CURRENT DEPLOY
 
 You need to install metamask and have some Rinkeby ether to play.
 Each player should use a different EOA. 
-You can get some from here:
+You can get some Rinkeby ETH from here:
 https://faucet.rinkeby.io/
 
 The game has three phases:
@@ -61,8 +61,9 @@ npm start
 
 ##some clarifications
 
-The game only accepts only ETH, to make it ERC20 compatible you should make a few changes, some of them are:
--You would have to set a new variable to specify the address of the erc020 that you are using for a particular game.
--You wold have to create/import an ERC20 interface
--Each time that you want to send a bet you should first approve the amount in the particular ERC20.
--You should modify the minimum bet, if you want to have a minimum token value equivalent to the ETH specified you would need to use some price feed oracle
+The game only accepts ETH, to make it ERC20 compatible you should make a few changes, some of them are:
+- You would have to set a new variable to specify the address of the erc020 that you are using for a particular game.
+- You would have to create/import an ERC20 interface
+- Each time you want to send a bet you should first approve the amount in the particular ERC20 smart contract with the address of the rockPapperScissor smart contract.
+- You should add the ERC20.transferFrom function to the play function.
+- You should modify the minimum bet, if you want to have a minimum token value equivalent to the ETH specified you would need to use a price feed oracle.
