@@ -1,5 +1,5 @@
 import './App.css';
-import {useEffect, useState } from 'react';
+import {useState } from 'react';
 import json from "./artifacts/contracts/RockPaperScissors.sol/RockPaperScissors.json"
 import { ethers } from 'ethers';
 import { parseEther } from 'ethers/lib/utils';
@@ -74,16 +74,6 @@ function App() {
     setParams({...params,[e.target.name]: e.target.value})
   }
 
-useEffect(()=>{
-  rockPaperScissors.on('GameFinished',(text,address)=>{
-    if (text!=="Draw") {
-      alert("Game result: "+ text)
-    } else {
-      alert("Game result: "+ text +' address:'+address)
-    }
-
-  })
-})
 
   return (
     <div className="main">
