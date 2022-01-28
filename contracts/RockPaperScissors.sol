@@ -23,13 +23,11 @@ contract RockPaperScissors {
 
     event GameFinished (string,address);
 
-    //checked
+
     function play(Move _move, string calldata salt) payable external isNotExpired {
         require(gameStatus == GameStatus.Open,"Game in progress");
         require(msg.value>=MINBET, "Must provide a minimun Bet");
         require(playersAddress[0] != msg.sender,"You can't play against yourself");
-        // console.log("timestamp", block.timestamp);
-        // console.log("constante", TIMEOUT);
         uint8 i;
         if (playersAddress[0] != address(0)) {
             i=1;
@@ -38,7 +36,6 @@ contract RockPaperScissors {
         }
         
         timeLimit = block.timestamp+TIMEOUT;
-        // console.log("timestamp2", block.timestamp);
         playersBet[i] = msg.value;
         playersAddress[i] = msg.sender;
         playersMoveHash[i] = sha256(abi.encodePacked(salt,_move));

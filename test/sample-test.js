@@ -40,7 +40,6 @@ describe("RockPaperScissors", function () {
     rockPaperScissors = await RockPaperScissors.deploy();
     await rockPaperScissors.deployed();
 
-    console.log("RockPaperScissors deployed to:", rockPaperScissors.address);
 
     snapshot = await network.provider.request({
       method: 'evm_snapshot',
