@@ -61,7 +61,12 @@ npm install
 npm start
 ```
 
-##some clarifications
+## some clarifications
+
+The UI is super simple. Multiple improvemts can be done:
+- listen for events to give feedback to the users
+- show the proper phase buttons
+- show a timer each time the time limit is set
 
 The game only accepts ETH, to make it ERC20 compatible you should make a few changes, some of them are:
 - You would have to set a new variable to specify the address of the erc020 that you are using for a particular game.
