@@ -1,7 +1,7 @@
 //SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.0;
 
-import "hardhat/console.sol";
+// import "hardhat/console.sol";
 
 contract RockPaperScissors {
     
@@ -79,12 +79,13 @@ contract RockPaperScissors {
     }
 
     function collectBets() external {
+        
         require(gameStatus == GameStatus.Finished || (timeLimit>0 && block.timestamp>timeLimit ), "Game not finished");
         
         address player1 = playersAddress[0];
         address player2 = playersAddress[1];
         uint bet1 = playersBet[0];
-        uint bet2 = playersBet[0];
+        uint bet2 = playersBet[1];
 
         if (gameStatus == GameStatus.CommitReveal) {
             if (playersMove[0]== Move.None && playersMove[1]== Move.None) {
@@ -106,7 +107,10 @@ contract RockPaperScissors {
 
         Result auxResult =  result;
         //to avoid reentrancies
+
         _reset();
+
+
         if (auxResult == Result.Player1) {
             payable(player1).transfer(bet1+bet2);
             return;
