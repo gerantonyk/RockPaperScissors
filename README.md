@@ -49,6 +49,8 @@ npx hardhat test
 
 ## Frontend- React
 
+Make sure you have run npx hardhat to generate the artifcats (we need the abi for the smart contrac calls)  
+
 Go to the app folder and run:
 
 ```shell
