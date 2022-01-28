@@ -35,8 +35,6 @@ https://rinkeby.etherscan.io/address/0xBF01B9eC81A1a4E43A55C1B54766D7e9e8c62264
 
 ## Smart contract - Hardhat
 
-Copy the example .env file and complete the grobal variables
-
 To build the app you have to install the dependencies in the root folder:
 
 ```shell
